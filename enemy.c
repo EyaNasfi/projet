@@ -13,10 +13,10 @@ void initennemi (ennemi *e)
 e->image= IMG_Load ("SOLDAT.png");
 e->positionsprite.x=0;
 e->positionsprite.y=0;
-e->positionsprite.w=100; //256=1280/5  //hauteur =1280 //NBC =5
-e->positionsprite.h=200; //256=512/2  //largeur =1280 //NBL =2
+e->positionsprite.w=100; 
+e->positionsprite.h=200; 
 
-//e->frame=0;
+
 e->dir=0;
 e->position.x=500;
 e->position.y=50;
@@ -25,25 +25,24 @@ e->min.x=50;
 }
 void afficherennemi (ennemi e,SDL_Surface *screen)
 {
-SDL_BlitSurface(e.image ,&e.positionsprite,screen,&e.position); //copier de image de position spritesheet sur l'ecran dans la position //
+SDL_BlitSurface(e.image ,&e.positionsprite,screen,&e.position); 
 }
 void animerennemi (ennemi *e)
 {
 
-//e->positionsprite.w = 256 +e->positionsprite.w;
+
 
 e->positionsprite.y = e->dir * e->positionsprite.h;
-//e->positionsprite.x+= 100; //positionner dans la ligne correspond a la dir 
-if (e->positionsprite.x == 300)  //dernier frame de sprite est atteint //300=400 largeur de sprite - largeur de frame
+if (e->positionsprite.x == 300)
 { 
 e->positionsprite.x=0;
-}//revenir a la premiere frame 
+}
 else 
 {
 e->positionsprite.x = e->positionsprite.x + e->positionsprite.w;
 }
 }
-//avance a la frame suivante  
+
 void deplacer (ennemi *e)
 {
 if (e->position.x > e->max.x)
@@ -53,7 +52,7 @@ e->dir =1;
 if (e->position.x < e->min.x)
 {
 e->dir =0;
-//e->position.x++;
+
 }
 if (e->dir==0)
 {
