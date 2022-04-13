@@ -9,11 +9,11 @@
 #include "perso.h"
 typedef struct 
 {
-SDL_Surface *image; //  affichage de sprite 
-SDL_Rect position,max,min; //  position de lennemi
+SDL_Surface *image;
+SDL_Rect position,max,min; 
 SDL_Rect positionsprite;
 int dir;
- //0:droite   // 1: gauche 
+
 }ennemi;
 void initennemi (ennemi *e);
 void afficherennemi (ennemi e,SDL_Surface *screen);
